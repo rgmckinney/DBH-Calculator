@@ -1,28 +1,17 @@
-/**
- * Created by Ryan on 2/18/2017.
- */
-public class DBHCalculator {
-    public enum Type {
+class DBHCalculator {
+    enum Type {
         BIN, DEC, HEX
     }
 
     private Type inType = Type.BIN;
-
     private Type outType = Type.BIN;
-
     private boolean toPad = false;
 
-    public void setInType(Type type) {
-        inType = type;
-    }
+    void setInType(Type type) { inType = type; }
+    void setOutType(Type type) { outType = type; }
+    void setToPad(boolean toPad) { this.toPad = toPad; }
 
-    public void setOutType(Type type) {
-        outType = type;
-    }
-
-    public void setToPad(boolean toPad) {this.toPad = toPad;}
-
-    public String calculate(String input) {
+    String calculate(String input) {
         long value = 0;
         input = input.replace(" ", "");
 
@@ -55,7 +44,7 @@ public class DBHCalculator {
         return Long.toString(value);
     }
 
-    public static String decToBin(long value) {
+    String decToBin(long value) {
         // Find max exponent
         int exp = 0;
         while (Math.pow(2, exp) < value) {
@@ -79,15 +68,15 @@ public class DBHCalculator {
         return sb.toString();
     }
 
-    public static String decToHex(long value) {
+    String decToHex(long value) {
         return Long.toString(value, 16);
     }
 
-    public static long hexToDec(String input) {
+    long hexToDec(String input) {
         return Long.parseLong(input, 16);
     }
 
-    public static long binToDec(String input)
+    long binToDec(String input)
             throws InvalidInputException {
         long total = 0;
 
@@ -104,7 +93,7 @@ public class DBHCalculator {
         return total;
     }
 
-    private String pad(String output) {
+    String pad(String output) {
         if (!toPad) {
             return output;
         }
@@ -119,10 +108,6 @@ public class DBHCalculator {
         }
 
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(hexToDec("00f0"));
     }
 }
 

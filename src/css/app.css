@@ -1,0 +1,20 @@
+.calc-button {
+    -fx-background-color:
+        #7B9A99,
+        linear-gradient(#ACF0EE, #D4F0EF);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+}
+
+.calc-button:hover {
+    -fx-background-color:
+            #7B9A99,
+            linear-gradient(#D4F0EF, #ACF0EE);
+}
+
+.calc-button:pressed {
+    -fx-background-color:
+            #7B9A99,
+            linear-gradient(#B6CAC9, #D4F0EF, #B6CAC9);
+}

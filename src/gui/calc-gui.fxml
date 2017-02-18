@@ -8,52 +8,52 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="568.0"
-      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane maxHeight="320.0" maxWidth="568.0" minHeight="320.0" minWidth="568.0" xmlns="http://javafx.com/javafx/8.0.111"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" stylesheets="@../css/app.css">
    <children>
       <TextField fx:id="textfield" layoutX="17.0" layoutY="20.0" prefHeight="79.0" prefWidth="533.0">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <Button fx:id="clearbutton" layoutX="17.0" layoutY="118.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="120.0"
-              text="Clear" textAlignment="CENTER" wrapText="true" onAction="#handleClear">
+      <Button layoutX="17.0" layoutY="118.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="120.0"
+              textAlignment="CENTER" wrapText="true" onAction="#handleClear" styleClass="calc-button" text="Clear">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="leftbinarybutton" layoutX="154.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
-              text="Binary" onAction="#handleLeftBinary">
+      <Button fx:id="leftbin" layoutX="154.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Binary" onAction="#handleLeftBinary" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="leftdecbutton" layoutX="154.0" layoutY="185.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
-              text="Decimal" onAction="#handleLeftDecimal">
+      <Button fx:id="leftdec" layoutX="154.0" layoutY="185.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Decimal" onAction="#handleLeftDecimal" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="lefthexbutton" layoutX="154.0" layoutY="253.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
-              text="Hexadecimal" onAction="#handleLeftHex">
+      <Button fx:id="lefthex" layoutX="154.0" layoutY="253.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Hexadecimal" onAction="#handleLeftHex" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <Button layoutX="388.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Binary"
-            onAction="#handleRightBinary">
+            onAction="#handleRightBinary" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <Button layoutX="388.0" layoutY="185.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Decimal"
-              onAction="#handleRightDecimal">
+              onAction="#handleRightDecimal" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <Button layoutX="388.0" layoutY="253.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Hexadecimal"
-              onAction="#handleRightHex">
+              onAction="#handleRightHex" styleClass="calc-button">
          <font>
             <Font size="20.0" />
          </font>
