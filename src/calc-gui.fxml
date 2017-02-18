@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="568.0"
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TextField fx:id="textfield" layoutX="17.0" layoutY="20.0" prefHeight="79.0" prefWidth="533.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="clearbutton" layoutX="17.0" layoutY="118.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="120.0"
+              text="Clear" textAlignment="CENTER" wrapText="true" onAction="#handleClear">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Button fx:id="leftbinarybutton" layoutX="154.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Binary" onAction="#handleLeftBinary">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="leftdecbutton" layoutX="154.0" layoutY="185.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Decimal" onAction="#handleLeftDecimal">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="lefthexbutton" layoutX="154.0" layoutY="253.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0"
+              text="Hexadecimal" onAction="#handleLeftHex">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="388.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Binary"
+            onAction="#handleRightBinary">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="388.0" layoutY="185.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Decimal"
+              onAction="#handleRightDecimal">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="388.0" layoutY="253.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="161.0" text="Hexadecimal"
+              onAction="#handleRightHex">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="341.0" layoutY="192.0" text="to">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="17.0" layoutY="219.0" mnemonicParsing="false" text="Padding for binary" />
+   </children>
+</Pane>
