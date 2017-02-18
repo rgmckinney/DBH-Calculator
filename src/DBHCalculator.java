@@ -10,6 +10,8 @@ public class DBHCalculator {
 
     private Type outType = Type.BIN;
 
+    private boolean toPad = false;
+
     public void setInType(Type type) {
         inType = type;
     }
@@ -18,8 +20,11 @@ public class DBHCalculator {
         outType = type;
     }
 
+    public void setToPad(boolean toPad) {this.toPad = toPad;}
+
     public String calculate(String input) {
         long value = 0;
+        input = input.replace(" ", "");
 
         try {
             switch (inType) {
@@ -40,11 +45,11 @@ public class DBHCalculator {
 
         switch (outType) {
             case BIN:
-                return decToBin(value);
+                return pad(decToBin(value));
             case DEC:
                 return Long.toString(value);
             case HEX:
-                return decToHex(value);
+                return pad(decToHex(value));
         }
 
         return Long.toString(value);
@@ -53,7 +58,7 @@ public class DBHCalculator {
     public static String decToBin(long value) {
         // Find max exponent
         int exp = 0;
-        while (Math.pow(2, exp+1) < value) {
+        while (Math.pow(2, exp) < value) {
             exp++;
         }
 
@@ -87,15 +92,33 @@ public class DBHCalculator {
         long total = 0;
 
         for (int i=0; i < input.length(); i++) {
-            if (input.charAt(input.length() - i - 1) == '1') {
+            char inputChar = input.charAt(input.length()-i-1);
+            if (inputChar == '1') {
                 total += Math.pow(2, i);
             }
-            else if (input.charAt(input.length() - i - 1) != '0') {
+            else if (inputChar != '0') {
                 throw new InvalidInputException();
             }
         }
 
         return total;
+    }
+
+    private String pad(String output) {
+        if (!toPad) {
+            return output;
+        }
+
+        StringBuilder sb = new StringBuilder(output);
+        while (sb.length() % 4 != 0) {
+            sb.insert(0, '0');
+        }
+
+        for (int i=4; i < sb.length(); i+=5) {
+            sb.insert(i, ' ');
+        }
+
+        return sb.toString();
     }
 
     public static void main(String[] args) {

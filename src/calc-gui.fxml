@@ -63,6 +63,6 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <CheckBox layoutX="17.0" layoutY="219.0" mnemonicParsing="false" text="Padding for binary" />
+      <CheckBox fx:id="padding" layoutX="17.0" layoutY="219.0" mnemonicParsing="false" text="Binary/Hex Padding" />
    </children>
 </Pane>

@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -11,6 +12,9 @@ public class Controller {
 
     @FXML
     private TextField textfield;
+
+    @FXML
+    private CheckBox padding;
 
     @FXML protected void handleClear(ActionEvent event) {
         textfield.setText("");
@@ -30,16 +34,19 @@ public class Controller {
 
     @FXML protected void handleRightBinary(ActionEvent event) {
         calc.setOutType(DBHCalculator.Type.BIN);
+        calc.setToPad(padding.isSelected());
         textfield.setText(calc.calculate(textfield.getText()));
     }
 
     @FXML protected void handleRightDecimal(ActionEvent event) {
         calc.setOutType(DBHCalculator.Type.DEC);
+        calc.setToPad(padding.isSelected());
         textfield.setText(calc.calculate(textfield.getText()));
     }
 
     @FXML protected void handleRightHex(ActionEvent event) {
         calc.setOutType(DBHCalculator.Type.HEX);
+        calc.setToPad(padding.isSelected());
         textfield.setText(calc.calculate(textfield.getText()));
     }
 }
