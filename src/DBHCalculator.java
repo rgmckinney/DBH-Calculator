@@ -14,6 +14,9 @@ class DBHCalculator {
     String calculate(String input) {
         long value = 0;
         input = input.replace(" ", "");
+        if (input.length() == 0) {
+            return input;
+        }
 
         try {
             switch (inType) {
@@ -21,7 +24,12 @@ class DBHCalculator {
                     value = binToDec(input);
                     break;
                 case DEC:
-                    value = Integer.parseInt(input);
+                    try {
+                        value = Integer.parseInt(input);
+                    }
+                    catch (NumberFormatException e) {
+                        throw new InvalidInputException();
+                    }
                     break;
                 case HEX:
                     value = hexToDec(input);

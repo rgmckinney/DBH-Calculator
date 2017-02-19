@@ -30,7 +30,8 @@ public class Controller {
     private TextField textfield;
 
     @FXML
-    private CheckBox padding;
+    private CheckBox padding, autoclear;
+
 
     @FXML protected void handleClear() {
         textfield.setText("");
@@ -67,6 +68,17 @@ public class Controller {
         calc.setOutType(DBHCalculator.Type.HEX);
         calc.setToPad(padding.isSelected());
         textfield.setText(calc.calculate(textfield.getText()));
+    }
+
+    @FXML protected void handleAutoClear() {
+        if (autoclear.isSelected()) {
+            textfield.setOnMouseClicked(e -> {
+                textfield.setText("");
+            });
+        }
+        else {
+            textfield.setOnMouseClicked(e -> {});
+        }
     }
 
     private void disable(SimpleBooleanProperty toDisable) {

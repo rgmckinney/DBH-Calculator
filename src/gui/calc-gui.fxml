@@ -9,9 +9,9 @@
 
 
 <Pane maxHeight="320.0" maxWidth="568.0" minHeight="320.0" minWidth="568.0" xmlns="http://javafx.com/javafx/8.0.111"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" stylesheets="@../css/app.css">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" styleClass="calc-background" stylesheets="@../css/app.css">
    <children>
-      <TextField fx:id="textfield" layoutX="17.0" layoutY="20.0" prefHeight="79.0" prefWidth="533.0">
+      <TextField fx:id="textfield" layoutX="17.0" layoutY="20.0" prefHeight="79.0" prefWidth="533.0" styleClass="calc-field">
          <font>
             <Font size="24.0" />
          </font>
@@ -64,5 +64,7 @@
          </font>
       </Label>
       <CheckBox fx:id="padding" layoutX="17.0" layoutY="219.0" mnemonicParsing="false" text="Binary/Hex Padding" />
+       <CheckBox fx:id="autoclear" layoutX="17.0" layoutY="249.0" mnemonicParsing="false" text="Auto-Clear"
+                 onAction="#handleAutoClear"/>
    </children>
 </Pane>

@@ -1,3 +1,13 @@
+.calc-field {
+    -fx-background-color:
+        #F4F4F4;
+}
+
+.calc-background {
+    -fx-background-color:
+        linear-gradient(#D4F4F3, #BBE8E6);
+}
+
 .calc-button {
     -fx-background-color:
         #7B9A99,
