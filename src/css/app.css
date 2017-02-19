@@ -1,6 +1,7 @@
 .calc-field {
     -fx-background-color:
-        #F4F4F4;
+        #B2B2B2,
+        linear-gradient(#D6DDDE, #F3FCFD);
 }
 
 .calc-background {
@@ -23,8 +24,8 @@
             linear-gradient(#D4F0EF, #ACF0EE);
 }
 
-.calc-button:pressed {
+.calc-button:disabled, .scroll-pane:disabled {
+    -fx-opacity: 1.0;
     -fx-background-color:
-            #7B9A99,
-            linear-gradient(#B6CAC9, #D4F0EF, #B6CAC9);
+        linear-gradient(#DBE556, #F3FA8E);
 }
